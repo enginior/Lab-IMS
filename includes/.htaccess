@@ -1,0 +1,4 @@
+# Deny direct browser access to all internal PHP includes
+<Files "*.php">
+    Require all denied
+</Files>

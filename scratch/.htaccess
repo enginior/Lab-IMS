@@ -1,0 +1,2 @@
+# Deny direct browser access to scratch scripts
+Require all denied

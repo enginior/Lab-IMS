@@ -1,0 +1,26 @@
+# Lab-IMS Root Security & Protection (.htaccess)
+
+# 1. Disable Directory Browsing / File Listing
+Options -Indexes
+
+# 2. Block direct web access to sensitive files
+<FilesMatch "\.(sql|log|ini|sh|bak|git|env)$">
+    Require all denied
+</FilesMatch>
+
+# 3. Prevent direct access to hidden files/folders (starting with dot)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# 4. Security Response Headers
+<IfModule mod_headers.c>
+    # Prevent MIME-type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    # Prevent clickjacking by denying iframing on foreign domains
+    Header set X-Frame-Options "SAMEORIGIN"
+    # Basic XSS protection for older browsers
+    Header set X-XSS-Protection "1; mode=block"
+    # Referrer policy to protect internal URLs
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

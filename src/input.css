@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* OPTIONAL: This is how you configure Tailwind v4.
+   Instead of tailwind.config.js, you use the @theme block here.
+*/
+@theme {
+    --font-sans: "Inter", sans-serif;
+    --color-brand: #3b82f6;
+    --color-brand-hover: #2563eb;
+    --color-app-bg: #0f172a;
+    --color-app-card: #1e293b;
+    --color-app-border: #334155;
+    --color-app-text: #f1f5f9;
+    --color-app-muted: #94a3b8;
+}
+
+@utility no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

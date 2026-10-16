@@ -1,0 +1,73 @@
+# ==============================================================================
+# Lab-IMS .gitignore
+# ==============================================================================
+
+# --- Private Configuration & Environment Secrets ---
+includes/config.local.php
+includes/config.php
+config.local.php
+config.php
+.env
+.env.*
+*.env
+*.local
+
+# --- SSL Keys, Certificates & Credentials ---
+*.pem
+*.key
+*.crt
+*.pfx
+*.p12
+
+# --- Database Backups & Dynamic Dumps ---
+# Note: inventory_db.sql is tracked as the initial schema template
+*.sql.bak
+*.sql.gz
+*.dump
+*.sqlite
+backup*.sql
+dump*.sql
+
+# --- Developer Scratchpad & Test Scripts ---
+# Preserves directory security while ignoring temporary test scripts
+scratch/*
+!scratch/.htaccess
+!scratch/.gitkeep
+
+# --- Standalone Tailwind CLI Binaries ---
+tailwindcss
+tailwindcss.exe
+tailwindcss-*
+
+# --- Database Management Web Tools ---
+adminer.php
+adminer-*.php
+
+# --- Runtime Logs & Temporary Files ---
+*.log
+logs/
+error_log
+access_log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# --- Node / Package Manager Caches (if applicable) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Operating System & IDE Artifacts ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.bak

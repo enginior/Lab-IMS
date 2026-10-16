@@ -1,0 +1,7 @@
+# Disable directory listing
+Options -Indexes
+
+# Prevent PHP execution inside uploads directory
+<FilesMatch "\.(php|php5|php7|php8|phtml|pl|py|cgi|sh)$">
+    Require all denied
+</FilesMatch>
